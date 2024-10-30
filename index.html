@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITICON</title>
+    <style>
+        /* 기본 스타일 설정 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            background-color: white;
+            background-image: url('./Asset\ 1-100.jpg'); /* 배경 이미지 추가 */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            background-color: black;
+            width: 98vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+
+        .logo{
+            display: flex;
+            justify-content: space-between;
+            height: 0;
+        }
+
+        .logo img{
+            transform: translate(0,-50%);
+        }
+
+        .line{
+            width: 20vw;
+            height: 0;
+            border: 0.25px solid white;
+            opacity: 30%;
+        }
+
+        .point{
+            transform: translate(0,-6px);
+            opacity: 30%;
+        }
+
+        .inner-container{
+            width: 100%;
+            height: 30vh;
+            margin: 0;
+        }
+
+        .inner-container ul{
+            list-style: none;
+            width: auto;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-container ul li{
+            width: 200px;
+            height: 200px;
+            margin: 0 30px;
+            text-align: center;
+            overflow: hidden;
+            border: none;
+            outline: 5px solid white;
+        }
+        .inner-container ul li img{
+            width: 100%;
+            height: auto;
+        }
+        @media screen and (min-width:769px) and (max-width:1080px) {
+            .inner-container ul li{
+            width: 19vw;
+            height: 18.5vw;
+            margin: 0 3vw;
+            }
+        }
+
+        
+        @media screen and (max-width:768px) {
+            body{
+                min-height: 160vh;
+            }
+            .container{
+                min-height: 140vh;
+                padding: 3em 0;
+            }
+
+            .logo{
+                order: 3;
+            }
+
+            .logo img{
+                scale: 0.8;
+            transform: translate(0,-50%);
+            }   
+
+            .inner-container{
+                height: 80vh;
+            }
+
+            .inner-container ul{
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .inner-container ul li{
+                flex-basis: 35%;
+                width: 100%;
+                height: 34.4vw; 
+                border: none; 
+            }
+        }
+        @media screen and (max-width:490px) {
+            body{
+                min-height: 340vh;
+            }
+            .container{
+                min-height: 320vh;
+            }
+            .inner-container{
+                height: 160vh;
+            }
+            .inner-container ul li{
+                flex-basis: 60%;
+                height: 59vw; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <ul>
+                <li><img src="/img/바나나.png" alt="" id="forImg"></li>
+                <li><img src="/img/사과.jpg" alt="" id="forImg"></li>
+                <li><img src="http://via.placeholder.com/202x202" alt="" id="forImg"></li>
+                <li><img src="http://via.placeholder.com/203x203" alt="" id="forImg"></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <p></p>
+            <p class="point"><img src="/별쪼가뤼.png" alt="#" width="7.5px"></p>
+            <div class="line"></div>
+            <img src="/logo.png" alt="#" width="200px" height="70px">
+            <div class="line"></div>
+            <p class="point"><img src="/별쪼가뤼.png" alt="#" width="7.5px"></p>
+            <p></p>
+        </div>
+        <div class="inner-container">
+            <ul>
+                <li><img src="http://via.placeholder.com/204x204" alt="" id="forImg"></li>
+                <li><img src="http://via.placeholder.com/205x205" alt="" id="forImg"></li>
+                <li><img src="http://via.placeholder.com/206x206" alt="" id="forImg"></li>
+                <li><img src="http://via.placeholder.com/207x207" alt="" id="forImg"></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <script>
+        let Imgs = document.querySelectorAll("#forImg")
+        Imgs.forEach(e => {
+            e.addEventListener("click",(event)=>{
+                let string = `${event.target.src}`
+                if(!(string.includes("gif")))
+                event.target.src = `${string.substr(0,string.length-3)}gif`
+            })
+        });
+    </script>
+</body>
+</html>
