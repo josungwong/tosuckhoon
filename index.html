@@ -149,10 +149,10 @@
     <div class="container">
         <div class="inner-container">
             <ul>
-                <li><img src="/img/바나나.png" alt="" id="forImg"></li>
-                <li><img src="/img/사과.jpg" alt="" id="forImg"></li>
-                <li><img src="" alt="" id="forImg"></li>
-                <li><img src="" alt="" id="forImg"></li>
+                <li><img src="/img/바나나.png" alt="1" id="forImg"></li>
+                <li><img src="/img/사과.jpg" alt="2" id="forImg"></li>
+                <li><img src="" alt="3" id="forImg"></li>
+                <li><img src="" alt="4" id="forImg"></li>
             </ul>
         </div>
         <div class="logo">
@@ -166,10 +166,10 @@
         </div>
         <div class="inner-container">
             <ul>
-                <li><img src="" alt="" id="forImg"></li>
-                <li><img src="" alt="" id="forImg"></li>
-                <li><img src="" alt="" id="forImg"></li>
-                <li><img src="" alt="" id="forImg"></li>
+                <li><img src="" alt="5" id="forImg"></li>
+                <li><img src="" alt="6" id="forImg"></li>
+                <li><img src="" alt="7" id="forImg"></li>
+                <li><img src="" alt="8" id="forImg"></li>
             </ul>
         </div>
     </div>
@@ -181,6 +181,7 @@
             e.addEventListener("click",(event)=>{
                 let string = `${event.target.src}`
                 if(!(string.includes("gif")))
+                console.log("변환중",string.substr(0,string.length-3))
                 event.target.src = `${string.substr(0,string.length-3)}gif`
             })
         });
